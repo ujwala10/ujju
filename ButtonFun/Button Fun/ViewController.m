@@ -80,6 +80,7 @@ static const CGSize SQUARE_SIZE = { 40, 40 };
             {
                 if(hitLayer == subview.layer) {
                     [subview setBackgroundColor:[UIColor whiteColor]];
+                    break;
                 }
             }
         }
