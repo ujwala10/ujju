@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Ujwalashish. All rights reserved.
 //
 
+
 #import "ViewController.h"
+#import "CustomView.h"
 
-
-static const CGSize SQUARE_SIZE = { 40, 40 };
+static const CGSize SQUARE_SIZE = { 40.0f, 40.0f };
 
 @interface ViewController ()
 @end
@@ -29,44 +30,33 @@ static const CGSize SQUARE_SIZE = { 40, 40 };
 }
 
 - (void) createAndAddSquares {
-    int w = self.view.frame.size.width;
-    int h = self.view.frame.size.height;
+    CGFloat w = self.view.frame.size.width;
+    CGFloat h = self.view.frame.size.height;
     
-    for(int x = 0; x <= w; x+= 40) {
-        for(int y = 0; y <= h; y+= 40) {
+    for(CGFloat x = 0.0f; x <= w; x+= 40.0f) {
+        for(CGFloat y = 0.0f; y <= h; y+= 40.0f) {
             CGPoint point = CGPointMake(x, y);
             [self addSquare: point];
         }
     }
 }
 
-- (void) updateSquares {
-    while ([self.view.subviews count] > 0) {
-        UIView *v = [self.view.subviews objectAtIndex:0];
-        [v removeFromSuperview];
-    }
-    [self createAndAddSquares];
-}
-
 - (void) addSquare : (CGPoint) point {
     CGRect frame;
     frame.origin = point;
     frame.size = SQUARE_SIZE;
-    UIView *squareView = [[UIView alloc] initWithFrame:frame];
-    squareView.backgroundColor = [self randomColor];
+    CustomView *squareView = [[CustomView alloc] initWithFrame:frame];
+    [squareView setProperties];
     [self.view addSubview:squareView];
-    squareView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
-- (UIColor *) randomColor {
-    switch (arc4random()%5) {
-        case 0: return [UIColor blueColor];
-        case 1: return [UIColor greenColor];
-        case 2: return [UIColor orangeColor];
-        case 3: return [UIColor redColor];
-        case 4: return [UIColor purpleColor];
+- (void) updateSquares {
+    while ([self.view.subviews count] > 0) {
+        UIView *subview = [self.view.subviews objectAtIndex:0];
+        if(subview)
+            [subview removeFromSuperview];
     }
-    return [UIColor blackColor];
+    [self createAndAddSquares];
 }
 
 - (IBAction)tapGesture:(UITapGestureRecognizer*) sender {
@@ -75,11 +65,12 @@ static const CGSize SQUARE_SIZE = { 40, 40 };
         CALayer *hitLayer = [self.view.layer hitTest: location];
         
         //check if dat layer is one of the squareview
-        for(UIView *subview in self.view.subviews) {
-            if([subview isKindOfClass:[UIView class]])
+        for(id subview in self.view.subviews) {
+            if([subview isKindOfClass:[CustomView class]])
             {
-                if(hitLayer == subview.layer) {
-                    [subview setBackgroundColor:[UIColor whiteColor]];
+                CustomView *view = (CustomView*) subview;
+                if(view && hitLayer == view.layer) {
+                    [view changeColor];
                     break;
                 }
             }

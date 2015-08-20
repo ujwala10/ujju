@@ -16,6 +16,7 @@
 		3760DF2A1B84B5FA0009F120 /* Button_FunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3760DF291B84B5FA0009F120 /* Button_FunTests.m */; };
 		3760DF351B84B7220009F120 /* ButtonFun - iPhone Sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 3760DF331B84B7220009F120 /* ButtonFun - iPhone Sample.png */; };
 		3760DF361B84B7220009F120 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3760DF341B84B7220009F120 /* README.md */; };
+		37E1C3761B8645EE00CFFE10 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1C3751B8645EE00CFFE10 /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		3760DF291B84B5FA0009F120 /* Button_FunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Button_FunTests.m; sourceTree = "<group>"; };
 		3760DF331B84B7220009F120 /* ButtonFun - iPhone Sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonFun - iPhone Sample.png"; sourceTree = "<group>"; };
 		3760DF341B84B7220009F120 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		37E1C3741B8645EE00CFFE10 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomView.h; path = "../../../../Desktop/iOSLearning/Button Fun/Button Fun/CustomView.h"; sourceTree = "<group>"; };
+		37E1C3751B8645EE00CFFE10 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomView.m; path = "../../../../Desktop/iOSLearning/Button Fun/Button Fun/CustomView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				3760DF121B84B5FA0009F120 /* AppDelegate.m */,
 				3760DF141B84B5FA0009F120 /* ViewController.h */,
 				3760DF151B84B5FA0009F120 /* ViewController.m */,
+				37E1C3741B8645EE00CFFE10 /* CustomView.h */,
+				37E1C3751B8645EE00CFFE10 /* CustomView.m */,
 				3760DF171B84B5FA0009F120 /* Main.storyboard */,
 				3760DF1A1B84B5FA0009F120 /* Images.xcassets */,
 				3760DF1C1B84B5FA0009F120 /* LaunchScreen.xib */,
@@ -226,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E1C3761B8645EE00CFFE10 /* CustomView.m in Sources */,
 				3760DF161B84B5FA0009F120 /* ViewController.m in Sources */,
 				3760DF131B84B5FA0009F120 /* AppDelegate.m in Sources */,
 				3760DF361B84B7220009F120 /* README.md in Sources */,
